@@ -9,10 +9,10 @@ app.use(express.json());
 setupRoutes(app);
 
 app.listen(PORT, () => {
-    console.log(`Server STABLE is running on http://localhost:${PORT}`);
+    console.log(`Server CANARY is running on http://localhost:${PORT}`);
 });
 
 app.get('/', (req, res) => {
-    res.send('Welcome to the STABLE API!');
+    res.send('Welcome to the CANARY API!');
 }
 );
