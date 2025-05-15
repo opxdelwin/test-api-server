@@ -41,6 +41,6 @@ certificatesResolvers:
 
 # Configure log levels
 log:
-  level: INFO
+  level: DEBUG
 
 accessLog: {}
