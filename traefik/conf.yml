@@ -43,4 +43,7 @@ certificatesResolvers:
 log:
   level: DEBUG
 
-accessLog: {}
+accessLog:
+  filePath: "/var/log/custom/traefik-s1-access.log"
+  format: "common"
+  bufferingSize: 100

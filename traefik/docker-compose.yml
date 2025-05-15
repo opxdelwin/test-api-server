@@ -17,6 +17,7 @@ services:
       - ./conf.yml:/etc/traefik/traefik.yml:ro
       - ./dynamic_conf.yml:/etc/traefik/dynamic_conf.yml:ro
       - ./acme.json:/acme.json
+      - ./logs/traefik-s1-access.log:/var/log/custom/traefik-s1-access.log
     environment:
       - CF_API_EMAIL=delwinmathew2004@gmail.com
       - CF_DNS_API_TOKEN=qhQJjMZwQKN_QNxU0XUlgCdTcaL2HzBsPelfy9x4
