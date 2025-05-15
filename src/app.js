@@ -14,7 +14,7 @@ app.listen(PORT, () => {
 
 app.get("/", (req, res) => {
   res.json({
-    message: "Welcome to the STABLE API",
+    message: "Welcome to the S1 STABLE API",
     headers: req.headers,
   });
 });
