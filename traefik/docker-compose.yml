@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  traefik:
+    image: traefik:v2.10
+    container_name: traefik
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"  # Traefik dashboard (optional, can be removed in production)
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./conf.yml:/etc/traefik/traefik.yml:ro
+      - ./dynamic_conf.yml:/etc/traefik/dynamic_conf.yml:ro
+      - ./acme.json:/acme.json
+    environment:
+      - CF_API_EMAIL=delwinmathew2004@gmail.command
+      - CF_API_KEY=qhQJjMZwQKN_QNxU0XUlgCdTcaL2HzBsPelfy9x4
+    networks:
+      - traefik-network
+
+networks:
+  traefik-network:
+    name: traefik-network
+    external: true
