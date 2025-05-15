@@ -32,7 +32,7 @@ providers:
 
 # Configure certificate resolver for Cloudflare
 certificatesResolvers:
-  cloudflare:
+  my-resolver:
     acme:
       email: delwinmathew2004@gmail.com
       storage: acme.json

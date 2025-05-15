@@ -27,7 +27,7 @@ http:
       service: "server-c-canary"
       priority: 200  # Higher priority than the stable route
       tls:
-        certResolver: "cloudflare"
+        certResolver: my-resolver
 
     # Default/stable router - used when X-Version is not canary or not present
     server-c:
@@ -41,7 +41,7 @@ http:
       service: "server-c-stable"
       priority: 100
       tls:
-        certResolver: "cloudflare"
+        certResolver: my-resolver
 
   services:
     # Canary service
