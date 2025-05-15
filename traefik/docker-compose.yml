@@ -18,7 +18,7 @@ services:
       - ./dynamic_conf.yml:/etc/traefik/dynamic_conf.yml:ro
       - ./acme.json:/acme.json
     environment:
-      - CF_API_EMAIL=delwinmathew2004@gmail.command
+      - CF_API_EMAIL=delwinmathew2004@gmail.com
       - CF_API_KEY=qhQJjMZwQKN_QNxU0XUlgCdTcaL2HzBsPelfy9x4
     networks:
       - traefik-network
