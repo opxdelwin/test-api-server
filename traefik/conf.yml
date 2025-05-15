@@ -12,6 +12,9 @@ api:
 entryPoints:
   web:
     address: ":80"
+    forwardedHeaders:
+      trustedIPs:
+        - "34.47.235.33" # Loadbalancer IP
     http:
       redirections:
         entryPoint:
@@ -19,6 +22,9 @@ entryPoints:
           scheme: https
   websecure:
     address: ":443"
+    forwardedHeaders:
+      trustedIPs:
+        - "34.47.235.33" # Loadbalancer IP
 
 # Configure providers
 providers:
@@ -44,6 +50,6 @@ log:
   level: DEBUG
 
 accessLog:
-  filePath: "./logs/traefik-s1-access.log"
+  filePath: "/var/log/custom/traefik-s1-access.log"
   format: "common"
   bufferingSize: 100
