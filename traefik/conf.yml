@@ -23,7 +23,8 @@ entryPoints:
   websecure:
     address: ":443"
     forwardedHeaders:
-      insecure: true
+      trustedIPs:
+        - "34.47.235.33" # Loadbalancer IP
 
 # Configure providers
 providers:
