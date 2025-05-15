@@ -1,19 +1,16 @@
-FROM node:14
+FROM node:14-alpine
 
-# Set the working directory
 WORKDIR /usr/src/app
 
-# Copy package.json and package-lock.json
+# Copy package files first for better caching
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm ci || npm install
 
-# Copy the rest of the application files
+# Then copy the rest of the application
 COPY . .
 
-# Expose the port the app runs on
 EXPOSE 3000
 
-# Command to run the application
-CMD ["node", "src/app.js"]
+CMD ["npm", "start"]

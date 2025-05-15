@@ -11,4 +11,10 @@ services:
       - NODE_ENV=development
     volumes:
       - .:/usr/src/app
+      - /usr/src/app/node_modules
+      - ./logs:/root/.npm/_logs
     command: npm start
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.server-c.entrypoints=web"
+      - "traefik.http.services.server-c.loadbalancer.server.port=3000"
