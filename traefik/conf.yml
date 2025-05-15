@@ -13,7 +13,8 @@ entryPoints:
   web:
     address: ":80"
     forwardedHeaders:
-      insecure: true
+      trustedIPs:
+        - "34.47.235.33" # Loadbalancer IP
     http:
       redirections:
         entryPoint:
